@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text } from 'react-native';
+import { InputItem } from 'antd-mobile';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Spinner, Button } from './common';
 
@@ -41,7 +42,7 @@ class LoginForm extends Component {
             placeholder="email@gmail.com"
             onChangeText={this.onEmailChange.bind(this)}
             value={this.props.email}
-            />
+          />
         </CardSection>
 
         <CardSection>
@@ -51,7 +52,7 @@ class LoginForm extends Component {
             placeholder="Password"
             onChangeText={this.onPasswordChanged.bind(this)}
             value={this.props.password}
-            />
+          />
         </CardSection>
         <Text style={styles.errorTextStyle}>
           {this.props.error}
