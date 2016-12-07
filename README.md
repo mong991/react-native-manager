@@ -26,8 +26,10 @@ A employees team manager APP React-based implementation.
 
 
 ## Install
+```
   > git clone git@github.com:mong991/react-native-manager.git
   > cd react-native-manager
   > npm install
   > react-native run-ios
   > react-native run-android
+```
