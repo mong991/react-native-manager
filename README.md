@@ -1,4 +1,4 @@
-# React Native Manager
+# React Native Manager With Antd UI
 
 A employees team manager APP use antd-mobile UI and React-based implementation.
 
