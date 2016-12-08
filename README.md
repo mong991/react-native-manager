@@ -1,6 +1,6 @@
 # React Native Manager
 
-A employees team manager APP React-based implementation.
+A employees team manager APP use antd-mobile UI and React-based implementation.
 
 ##Features
 - show employess list
@@ -17,6 +17,7 @@ A employees team manager APP React-based implementation.
 4. react-native-router-flux
 5. Google firebase
 6. lodash
+7. antd-mobile UI
 
 ##Screenshot
 ![alt text](https://github.com/mong991/react-native-manager/blob/master/screen_shot/login.PNG "react-native-manager")

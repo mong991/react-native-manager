@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Text } from 'react-native';
-import { InputItem } from 'antd-mobile';
+import { Text, View } from 'react-native';
+import {
+   Button,
+   InputItem,
+   List,
+   WingBlank,
+   Card,
+   WhiteSpace,
+   ActivityIndicator
+} from 'antd-mobile';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
-import { Card, CardSection, Input, Spinner, Button } from './common';
 
 
 class LoginForm extends Component {
@@ -23,44 +30,52 @@ class LoginForm extends Component {
 
   renderButton() {
     if (this.props.loading) {
-      return <Spinner size="large" />;
+      return <ActivityIndicator size="large" color="#0080FF" />;
     }
 
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>
+      <Button type="primary" onClick={this.onButtonPress.bind(this)} style={{ margin: 10 }}>
         Login
-            </Button>
+      </Button>
     );
   }
 
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            lable="Email"
-            placeholder="email@gmail.com"
-            onChangeText={this.onEmailChange.bind(this)}
-            value={this.props.email}
-          />
-        </CardSection>
+      <View>
+        <WhiteSpace size="lg" />
+        <WingBlank>
+          <Card>
+          <List>
+            <InputItem
+              labelNumber="5"
+              placeholder="email@gmail.com"
+              onChange={this.onEmailChange.bind(this)}
+              value={this.props.email}
+            >
+              Email
+            </InputItem>
 
-        <CardSection>
-          <Input
-            secureTextEntry
-            lable="Password"
-            placeholder="Password"
-            onChangeText={this.onPasswordChanged.bind(this)}
-            value={this.props.password}
-          />
-        </CardSection>
-        <Text style={styles.errorTextStyle}>
-          {this.props.error}
-        </Text>
-        <CardSection>
-          {this.renderButton()}
-        </CardSection>
-      </Card>
+            <InputItem
+              labelNumber="5"
+              type="password"
+              placeholder="enter password"
+              onChange={this.onPasswordChanged.bind(this)}
+              value={this.props.password}
+            >
+              Password
+            </InputItem>
+          </List>
+
+          <View>
+            <Text style={styles.errorTextStyle}>
+              {this.props.error}
+            </Text>
+            {this.renderButton()}
+          </View>
+          </Card>
+        </WingBlank>
+      </View>
     );
   }
 }

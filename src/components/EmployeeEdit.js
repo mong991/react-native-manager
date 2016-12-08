@@ -1,9 +1,18 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { View, Alert } from 'react-native';
 import Communications from 'react-native-communications';
+import {
+   Card,
+   Button,
+   List,
+   WhiteSpace,
+   WingBlank,
+   Modal
+} from 'antd-mobile';
 import { employeeUpdate, employeeSave, employeeDelete } from '../actions';
-import { Card, CardSection, Button, Confirm } from './common';
+import { Confirm } from './common';
 import EmployeeForm from './EmployeeForm';
 
 class EmployeeEdit extends Component {
@@ -13,7 +22,6 @@ class EmployeeEdit extends Component {
       this.props.employeeUpdate({ prop, value });
     });
   }
-
   onButtonPress() {
     const { name, phone, shift } = this.props;
 
@@ -38,36 +46,44 @@ class EmployeeEdit extends Component {
 
   render() {
     return (
-      <Card>
-        <EmployeeForm />
-        <CardSection>
-          <Button onPress={this.onButtonPress.bind(this)}>
-            Save Changes
-          </Button>
-        </CardSection>
-        <CardSection>
-           <Button onPress={this.onTextPress.bind(this)}>
-            Text Schedule
-          </Button>
-        </CardSection>
-
-        <CardSection>
-           <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
-            Fire Employee
-          </Button>
-        </CardSection>
-
-        <Confirm
-          visible={this.state.showModal}
-          onAccept={this.onAccept.bind(this)}
-          onDecline={this.onDecline.bind(this)}
-        >
-          Are you sure want to delect this?
-        </Confirm>
-      </Card>
+      <View>
+        <WhiteSpace size="lg" />
+        <WingBlank>
+        <Card>
+          <List>
+            <EmployeeForm />
+            <Button type="primary" style={styles.buttonStyle} onClick={this.onButtonPress.bind(this)}>
+              Save Changes
+            </Button>
+            <Button type="primary" style={styles.buttonStyle} onClick={this.onTextPress.bind(this)}>
+              Text Schedule
+            </Button>
+            <Button type="primary" style={styles.buttonStyle} onClick={() => this.setState({ showModal: !this.state.showModal })}>
+              Fire Employee
+            </Button>
+            <Confirm
+              visible={this.state.showModal}
+              onAccept={this.onAccept.bind(this)}
+              onDecline={this.onDecline.bind(this)}
+            >
+              Are you sure want to delect this?
+            </Confirm>
+          </List>
+        </Card>
+        </WingBlank>
+      </View>
     );
   }
 }
+
+const styles = {
+    buttonStyle: {
+        alignSelf: 'stretch',
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 10
+    }
+};
 
 const mapStateToProps = (state) => {
   const { name, phone, shift } = state.employeeForm;

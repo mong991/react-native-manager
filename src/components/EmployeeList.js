@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
+import { List } from 'antd-mobile';
 import { employeesFetch } from '../actions';
 import ListItem from './ListItem';
 
@@ -31,11 +32,13 @@ class EmployeeList extends Component {
   render() {
     console.log(this.props);
     return (
-      <ListView
-        enableEmptySections
-        dataSource={this.dataSource}
-        renderRow={this.renderRow}
-      />
+      <List>
+        <ListView
+          enableEmptySections
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+        />
+      </List>
     );
   }
 }
