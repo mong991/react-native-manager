@@ -20,16 +20,17 @@ A employees team manager APP use antd-mobile UI and React-based implementation.
 7. antd-mobile UI
 
 ##Screenshot
-![alt text](https://github.com/mong991/react-native-manager/blob/master/screen_shot/login.PNG "react-native-manager")
-![alt text](https://github.com/mong991/react-native-manager/blob/master/screen_shot/create%20empolyees.PNG "react-native-manager")
-![alt text](https://github.com/mong991/react-native-manager/blob/master/screen_shot/employees.PNG "react-native-manager")
-![alt text](https://github.com/mong991/react-native-manager/blob/master/screen_shot/edit%20empolyees.PNG "react-native-manager")
-
+![alt text](https://github.com/mong991/react-native-manager/blob/antd-mobile/screen_shot/Screenshot_login.png "login")
+![alt text](https://github.com/mong991/react-native-manager/blob/antd-mobile/screen_shot/Screenshot_list.png "list")
+![alt text](https://github.com/mong991/react-native-manager/blob/antd-mobile/screen_shot/Screenshot_create.png "create employee")
+![alt text](https://github.com/mong991/react-native-manager/blob/antd-mobile/screen_shot/Screenshot_edit.png "edit employee")
+![alt text](https://github.com/mong991/react-native-manager/blob/antd-mobile/screen_shot/Screenshot_delete.png "delete employee")
 
 ## Install
 ```
   > git clone git@github.com:mong991/react-native-manager.git
   > cd react-native-manager
+  > git checkout antd-mobile
   > npm install
   > react-native run-ios
   > react-native run-android
